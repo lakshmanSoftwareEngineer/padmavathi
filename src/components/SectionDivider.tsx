@@ -16,7 +16,7 @@ export default function SectionDivider({ variant = 'diamond' }: SectionDividerPr
     const ctx = gsap.context(() => {
       // Animate the line from center outward
       gsap.fromTo(
-        ref.current?.querySelector('.divider__line-left'),
+        '.divider__line-left',
         { scaleX: 0 },
         {
           scaleX: 1,
@@ -26,7 +26,7 @@ export default function SectionDivider({ variant = 'diamond' }: SectionDividerPr
         }
       );
       gsap.fromTo(
-        ref.current?.querySelector('.divider__line-right'),
+        '.divider__line-right',
         { scaleX: 0 },
         {
           scaleX: 1,
@@ -36,7 +36,7 @@ export default function SectionDivider({ variant = 'diamond' }: SectionDividerPr
         }
       );
       gsap.fromTo(
-        ref.current?.querySelector('.divider__center'),
+        '.divider__center',
         { scale: 0, rotation: 180 },
         {
           scale: 1,
