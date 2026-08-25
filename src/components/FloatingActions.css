@@ -1,0 +1,103 @@
+/* ============================================
+   FLOATING ACTIONS
+   ============================================ */
+.floating-actions {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  z-index: var(--z-overlay);
+}
+
+/* WhatsApp Button */
+.floating-actions__whatsapp {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round);
+  background: #25D366;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35),
+              0 0 0 0 rgba(37, 211, 102, 0.3);
+  transition: box-shadow var(--duration-fast);
+}
+
+.floating-actions__whatsapp:hover {
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.45),
+              0 0 0 8px rgba(37, 211, 102, 0.1);
+}
+
+.floating-actions__tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  white-space: nowrap;
+  padding: 6px 14px;
+  background: var(--clr-surface-elevated);
+  color: var(--clr-text-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all var(--duration-fast) var(--ease-out);
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+
+.floating-actions__tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--clr-surface-elevated);
+}
+
+.floating-actions__whatsapp:hover .floating-actions__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Back to Top */
+.floating-actions__back-to-top {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round);
+  background: var(--clr-surface-elevated);
+  border: 1px solid rgba(232, 168, 124, 0.1);
+  color: var(--clr-text-secondary);
+  transition: all var(--duration-fast) var(--ease-out);
+  box-shadow: var(--shadow-md);
+}
+
+.floating-actions__back-to-top:hover {
+  color: var(--clr-accent-1);
+  border-color: rgba(232, 168, 124, 0.25);
+  transform: translateY(-3px) scale(1) !important;
+}
+
+@media (max-width: 480px) {
+  .floating-actions {
+    bottom: var(--space-md);
+    right: var(--space-md);
+  }
+
+  .floating-actions__whatsapp {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-actions__tooltip {
+    display: none;
+  }
+}

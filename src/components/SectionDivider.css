@@ -1,0 +1,35 @@
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl) 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.divider__line-left,
+.divider__line-right {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-accent-1));
+}
+
+.divider__line-left {
+  transform-origin: right center;
+}
+
+.divider__line-right {
+  background: linear-gradient(90deg, var(--clr-accent-1), transparent);
+  transform-origin: left center;
+}
+
+.divider__center {
+  color: var(--clr-accent-1);
+  font-size: 1rem;
+  opacity: 0.6;
+  white-space: nowrap;
+}

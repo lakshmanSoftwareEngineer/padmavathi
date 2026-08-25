@@ -1,0 +1,21 @@
+/* ============================================
+   APP — Global Layout
+   ============================================ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-bg-dark);
+  position: relative;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(232, 168, 124, 0.3);
+  color: var(--clr-text-primary);
+}
+
+::-moz-selection {
+  background: rgba(232, 168, 124, 0.3);
+  color: var(--clr-text-primary);
+}
